@@ -1,36 +1,132 @@
 version: '1.0.{build}'
 
-platform:
-  - x86
-  - x64
+#platform:
+#  - x86
+#  - x64
 
 environment:
   matrix:
-    - CHILDPROCESS_POSIX_SPAWN: true
+    - ruby_version: "193"
+      CHILDPROCESS_POSIX_SPAWN: true
       CHILDPROCESS_UNSET: should-be-unset
-      RUBY_VERSION: 193
-    - CHILDPROCESS_POSIX_SPAWN: false
+    - ruby_version: "193-x64"
+      CHILDPROCESS_POSIX_SPAWN: true
       CHILDPROCESS_UNSET: should-be-unset
-      RUBY_VERSION: 193
-    - CHILDPROCESS_POSIX_SPAWN: true
+    - ruby_version: "200"
+      CHILDPROCESS_POSIX_SPAWN: true
       CHILDPROCESS_UNSET: should-be-unset
-      RUBY_VERSION: 200
-    - CHILDPROCESS_POSIX_SPAWN: false
+    - ruby_version: "200-x64"
+      CHILDPROCESS_POSIX_SPAWN: true
       CHILDPROCESS_UNSET: should-be-unset
-      RUBY_VERSION: 200
-    - CHILDPROCESS_POSIX_SPAWN: true
+    - ruby_version: "21"
+      CHILDPROCESS_POSIX_SPAWN: true
       CHILDPROCESS_UNSET: should-be-unset
-      RUBY_VERSION: 21
-    - CHILDPROCESS_POSIX_SPAWN: false
+    - ruby_version: "21-x64"
+      CHILDPROCESS_POSIX_SPAWN: true
       CHILDPROCESS_UNSET: should-be-unset
-      RUBY_VERSION: 21
-    - CHILDPROCESS_POSIX_SPAWN: true
+    - ruby_version: "22"
+      CHILDPROCESS_POSIX_SPAWN: true
       CHILDPROCESS_UNSET: should-be-unset
-      RUBY_VERSION: 22
-    - CHILDPROCESS_POSIX_SPAWN: false
+    - ruby_version: "22-x64"
+      CHILDPROCESS_POSIX_SPAWN: true
       CHILDPROCESS_UNSET: should-be-unset
-      RUBY_VERSION: 22
+    - ruby_version: "23"
+      CHILDPROCESS_POSIX_SPAWN: true
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "23-x64"
+      CHILDPROCESS_POSIX_SPAWN: true
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "193"
+      CHILDPROCESS_POSIX_SPAWN: true
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "193-x64"
+      CHILDPROCESS_POSIX_SPAWN: true
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "200"
+      CHILDPROCESS_POSIX_SPAWN: true
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "200-x64"
+      CHILDPROCESS_POSIX_SPAWN: true
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "21"
+      CHILDPROCESS_POSIX_SPAWN: true
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "21-x64"
+      CHILDPROCESS_POSIX_SPAWN: true
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "22"
+      CHILDPROCESS_POSIX_SPAWN: true
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "22-x64"
+      CHILDPROCESS_POSIX_SPAWN: true
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "23"
+      CHILDPROCESS_POSIX_SPAWN: true
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "23-x64"
+      CHILDPROCESS_POSIX_SPAWN: true
+      CHILDPROCESS_UNSET: should-be-unset
 
+    - ruby_version: "193"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "193-x64"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "200"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "200-x64"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "21"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "21-x64"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "22"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "22-x64"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "23"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "23-x64"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "193"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "193-x64"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "200"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "200-x64"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "21"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "21-x64"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "22"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "22-x64"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "23"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
+    - ruby_version: "23-x64"
+      CHILDPROCESS_POSIX_SPAWN: false
+      CHILDPROCESS_UNSET: should-be-unset
 
 install:
   - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
