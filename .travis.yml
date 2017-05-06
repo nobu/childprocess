@@ -17,8 +17,9 @@ cache: bundler
 env:
   global:
     - JAVA_OPTS="-Xrs"
-  - CHILDPROCESS_POSIX_SPAWN=true CHILDPROCESS_UNSET=should-be-unset
-  - CHILDPROCESS_POSIX_SPAWN=false CHILDPROCESS_UNSET=should-be-unset
+  matrix:
+    - CHILDPROCESS_POSIX_SPAWN=true CHILDPROCESS_UNSET=should-be-unset
+    - CHILDPROCESS_POSIX_SPAWN=false CHILDPROCESS_UNSET=should-be-unset
 
 
 #matrix:
