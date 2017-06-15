@@ -27,12 +27,13 @@ module ChildProcess
 
     private
 
+    PGROUP_OPT = ChildProcess.windows? ? :new_pgroup : :pgroup
     def launch_process
       options = {}
       options[:out] = io.stdout || NULL
       options[:err] = io.stderr || NULL
       options[:chdir] = @cwd if @cwd
-      options[:pgroup] = true if leader?
+      options[PGROUP_OPT] = true if leader?
       executable, *args = @args
       cmd = [@environment, [executable, executable], *args, options]
       if duplex?
