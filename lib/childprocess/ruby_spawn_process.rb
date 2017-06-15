@@ -3,9 +3,29 @@ require 'childprocess/unix'
 
 module ChildProcess
   class RubySpawnProcess < Unix::Process
-    private
-
     NULL = ::IO::NULL
+
+    def stop(timeout = 3)
+      assert_started
+      begin
+        send_term
+      rescue Errno::EINVAL
+        begin
+          return poll_for_exit(timeout)
+        rescue TimeoutError
+          # try next
+        end
+      end
+
+      send_kill
+      wait
+    rescue Errno::ECHILD, Errno::ESRCH
+      # handle race condition where process dies between timeout
+      # and send_kill
+      true
+    end
+
+    private
 
     def launch_process
       options = {}
