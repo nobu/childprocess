@@ -3,12 +3,6 @@ version: '1.0.{build}'
 environment:
   matrix:
     - CHILDPROCESS_UNSET: should-be-unset
-      RUBY_VERSION: 200-x64
-    - CHILDPROCESS_UNSET: should-be-unset
-      RUBY_VERSION: 21-x64
-    - CHILDPROCESS_UNSET: should-be-unset
-      RUBY_VERSION: 22-x64
-    - CHILDPROCESS_UNSET: should-be-unset
       RUBY_VERSION: 23-x64
 
 
