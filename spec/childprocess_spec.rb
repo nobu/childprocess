@@ -32,7 +32,7 @@ describe ChildProcess do
   #
   # We could work around this by doing the PATH search ourselves, but not sure
   # it's worth it.
-  it "raises ChildProcess::LaunchError if the process can't be started", :posix_spawn_on_linux => false do
+  it "raises ChildProcess::LaunchError if the process can't be started" do
     expect { invalid_process.start }.to raise_error(ChildProcess::LaunchError)
   end
 

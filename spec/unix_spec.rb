@@ -1,7 +1,7 @@
 require File.expand_path('../spec_helper', __FILE__)
 require "pid_behavior"
 
-if ChildProcess.unix? && !ChildProcess.jruby? && !ChildProcess.posix_spawn?
+if ChildProcess.unix? && !ChildProcess.jruby?
 
   describe ChildProcess::Unix::Process do
     it_behaves_like "a platform that provides the child's pid"
@@ -36,21 +36,6 @@ if ChildProcess.unix? && !ChildProcess.jruby? && !ChildProcess.posix_spawn?
       allow(process).to receive(:alive?).and_return(false)
 
       process.send(:send_signal, 'TERM')
-    end
-  end
-
-  describe ChildProcess::Unix::IO do
-    let(:io) { ChildProcess::Unix::IO.new }
-
-    it "raises an ArgumentError if given IO does not respond to :to_io" do
-      expect { io.stdout = nil }.to raise_error(ArgumentError, /to respond to :to_io/)
-    end
-
-    it "raises a TypeError if #to_io does not return an IO" do
-      fake_io = Object.new
-      def fake_io.to_io() StringIO.new end
-
-      expect { io.stdout = fake_io }.to raise_error(TypeError, /expected IO, got/)
     end
   end
 

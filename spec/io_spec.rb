@@ -225,4 +225,20 @@ describe ChildProcess do
     expect(cap.stdout).to eq ''
     expect(cap.stderr).to eq ''
   end
+
+  describe ChildProcess::Unix::IO do
+    let(:io) { ChildProcess::Unix::IO.new }
+
+    it "raises an ArgumentError if given IO does not respond to :to_io" do
+      expect { io.stdout = nil }.to raise_error(ArgumentError, /to respond to :to_io/)
+    end
+
+    it "raises a TypeError if #to_io does not return an IO" do
+      fake_io = Object.new
+      def fake_io.to_io() StringIO.new end
+
+      expect { io.stdout = fake_io }.to raise_error(TypeError, /expected IO, got/)
+    end
+  end
+
 end
